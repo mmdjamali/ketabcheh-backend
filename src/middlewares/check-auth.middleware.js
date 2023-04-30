@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken")
+const { access_secret } = require("../config")
 
 const access_confirm = (req , res , next) => {
     const access_token = req.headers["authorization"].split(" ")[1]
@@ -8,12 +9,10 @@ const access_confirm = (req , res , next) => {
             message : "token is not valid"
         })
 
-        req.user_id = user.id
+        req.user_id = user._id
         next()
         return
     })
 } 
 
-module.exports = {
-    access_confirm
-}
+module.exports = access_confirm

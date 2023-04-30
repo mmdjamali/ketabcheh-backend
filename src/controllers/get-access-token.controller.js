@@ -16,7 +16,7 @@ const get_access_token = async (req, res) => {
             message : "your token is not valid"
         })
 
-        const new_token = jwt.sign({id : user.id} , access_secret, {
+        const new_token = jwt.sign({_id : user._id} , access_secret, {
             expiresIn : "10s"
         })
 
