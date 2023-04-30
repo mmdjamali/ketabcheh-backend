@@ -8,22 +8,7 @@ const mongoose= require('mongoose')
 
 mongoose.connect("mongodb://localhost:27017/testdb")
 
-const BookSchema = new mongoose.Schema({
-    name : String
-})
 
-const Books = mongoose.model("book",BookSchema,"books") 
-
-const run = async () => {
-    try{
-        const books = await Books.find({})
-        console.log(books)
-    }
-    catch(err){
-        console.log(err)
-    }
-}
-run()
 
 require("dotenv").config()
 
