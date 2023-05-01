@@ -2,8 +2,8 @@ const express = require('express')
 const cookieParser = require("cookie-parser")
 const mongoose= require('mongoose')
 const cors = require("cors")
-const auth_routes = require("./routes/auth.routes") 
-const { DATA_BASE } = require('./config')
+const auth_routes = require("./src/routes/auth.routes") 
+const { DATA_BASE } = require('./src/config')
 
 const app = express()
 

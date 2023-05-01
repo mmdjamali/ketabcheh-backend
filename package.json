@@ -2,9 +2,9 @@
   "name": "learn-mongodb",
   "version": "0.0.0",
   "description": "",
-  "main": "./src/app.js",
+  "main": "app.js",
   "engines": {
-    "node" : "14.x"
+    "node" : "18.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
