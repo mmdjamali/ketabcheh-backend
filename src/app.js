@@ -15,11 +15,11 @@ mongoose.connect(DATA_BASE)
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin : "https://ketabcheh.vercel.app",
+    origin : true,
     credentials : true,
 }))
 
 // routes
 app.use("/auth", auth_routes)
 
-app.listen(80)
+app.listen(3000)
