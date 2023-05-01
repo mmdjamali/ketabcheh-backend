@@ -32,7 +32,8 @@ const login = async (req, res) => {
 
         res.cookie("ktb_refresh_token", refresh_token, {
             httpOnly : true,
-            secure : true
+            secure : true,
+            sameSite : "None"
         }).send()
     }
     catch(err){
