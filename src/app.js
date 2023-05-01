@@ -22,6 +22,4 @@ app.use(cors({
 // routes
 app.use("/auth", auth_routes)
 
-app.listen(3000 , () => {
-    console.log("server listening to port 3000")
-})
+app.listen(80)
