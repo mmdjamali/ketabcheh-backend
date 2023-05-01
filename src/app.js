@@ -22,4 +22,10 @@ app.use(cors({
 // routes
 app.use("/auth", auth_routes)
 
+app.get("/", (req, res) => {
+    res.json({
+        message : "working"
+    })
+})
+
 app.listen(3000)
