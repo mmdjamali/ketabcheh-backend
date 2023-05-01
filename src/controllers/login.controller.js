@@ -4,17 +4,19 @@ const user_model = require("../models/user.model")
 const { refresh_secret } = require("../config")
 const token_model = require("../models/token.model")
 
-const login = async (res, req) => {
-    const email = req.body.email
-    const phone_number = req.body.phone
-    const password = req.body.password
+const login = async (req, res) => {
+    const email = req.body?.email
+    const phone_number = req.body?.phone
+    const password = req.body?.password
 
-    if(!password && ( !email || !phone_number )) return res.sendStatus(400)
+    if(!password && ( !email || !phone_number )) {
+        return res.sendStatus(400)
+    }
 
     try{
-        const user = await user_model.find(email ? { email } : { phone_number })
+        const user = await user_model.findOne(email ? { email } : { phone_number })
 
-        if(!user) return res.status(400).json({
+        if(!user?.password) return res.status(400).json({
             message : "user not exists"
         })
 

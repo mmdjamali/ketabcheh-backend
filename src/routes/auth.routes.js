@@ -9,7 +9,7 @@ auth_routes.get("/refresh",get_access_token)
 
 auth_routes.post("/sign-up", sign_up)
 
-auth_routes.get("/login", login)
+auth_routes.post("/login", login)
 
 auth_routes.get("/get-profile", access_confirm, get_profile)
 

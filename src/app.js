@@ -3,11 +3,12 @@ const cookieParser = require("cookie-parser")
 const mongoose= require('mongoose')
 const cors = require("cors")
 const auth_routes = require("./routes/auth.routes") 
+const { DATA_BASE } = require('./config')
 
 const app = express()
 
 // connect to mongodb
-mongoose.connect("mongodb://localhost:27017/testdb")
+mongoose.connect(DATA_BASE)
 
 
 // middleware set up
